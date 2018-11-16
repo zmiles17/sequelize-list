@@ -1,0 +1,27 @@
+{
+  "name": "sequelize-list",
+  "version": "1.0.0",
+  "description": "There are **3 parts** to this homework. The homework is only complete if **all** parts are submitted.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zmiles17/sequelize-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zmiles17/sequelize-list/issues"
+  },
+  "homepage": "https://github.com/zmiles17/sequelize-list#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.6",
+    "sequelize": "^4.41.2",
+    "socket.io": "^2.1.1"
+  }
+}
