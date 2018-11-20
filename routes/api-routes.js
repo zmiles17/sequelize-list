@@ -15,7 +15,7 @@ module.exports = function (app) {
 
     app.put("/api/check-todolist/:id", function (req, res) {
         db.Todo.update({
-            complete: true
+            complete: 1
         }, {
                 where: {
                     id: req.params.id
@@ -27,7 +27,7 @@ module.exports = function (app) {
 
     app.put("/api/uncheck-todolist/:id", function (req, res) {
         db.Todo.update({
-            complete: false
+            complete: 0
         }, {
                 where: {
                     id: req.params.id
