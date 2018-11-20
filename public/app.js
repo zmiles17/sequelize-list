@@ -3,14 +3,21 @@
 function render() {
     $.get("/api/get-todolist").then(res => {
         $("ul").empty();
-        res
-            .forEach(elem => {
-                $("ul").append(`<li data-id=${elem.id}><i class="far ${elem.complete ? "fa-dot-circle" : "fa-circle"}"></i>${elem.text}</li>`);
-            })
+        res.forEach(elem => {
+            $("ul").append(`<li data-id=${elem.id}><i class="far ${elem.complete ? "fa-dot-circle" : "fa-circle"}"></i>${elem.text}</li>`);
+        })
         $("li").on("click", event => {
             event.preventDefault();
-            const id = $(event.target)[0].dataset.id;
-            $.ajax({ url: `/api/update-todolist`, method: "PUT", data: {id: id} })
+            if ($(event.target).attr("class") === "far fa-circle") {
+                const id = $(event.target).parent().attr("data-id");
+                $.ajax({ url: `/api/check-todolist/${id}`, method: "PUT" }).then(function(data){
+                    console.log(data);
+                });
+            } else if ($(event.target).attr("class") === "far fa-dot-circle") {
+                $.ajax({ url: `/api/uncheck-todolist/:id`, method: "PUT" }).then(function(data){
+                    console.log(data);
+                })
+            }
         })
     })
 }

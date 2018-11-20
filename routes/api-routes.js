@@ -12,14 +12,28 @@ module.exports = function (app) {
             res.json(data);
         })
     })
-    app.put("/api/update-todolist", function (req, res) {
-        console.log(req.complete);
+
+    app.put("/api/check-todolist/:id", function (req, res) {
         db.Todo.update({
             complete: true
         }, {
-            where: {
-                id: req.body.id
-            }
-        })
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (data) {
+                res.json(data);
+            })
+    })
+
+    app.put("/api/uncheck-todolist/:id", function (req, res) {
+        db.Todo.update({
+            complete: false
+        }, {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (data) {
+                res.json(data);
+            })
     })
 }
