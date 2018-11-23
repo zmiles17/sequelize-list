@@ -1,9 +1,9 @@
 {
     "development": {
-      "username": "root",
-      "password": "root",
-      "database": "todolist",
-      "host": "localhost",
+      "username": "p8w6qkja51ou5m5i",
+      "password": "owz9e8l5ep7rqrsi",
+      "database": "p14sn7aj9bfnfspu",
+      "host": "gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "port": 3306,
       "dialect": "mysql"
     },
