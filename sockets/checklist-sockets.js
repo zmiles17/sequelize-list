@@ -1,15 +1,15 @@
 module.exports = function (io) {
     io.on("connection", function (socket) {
-        socket.on("new-message", function (data) {
-            io.emit("emit-message", data);
+        socket.on("new-todo", function (data) {
+            io.emit("emit-todo", data);
         })
 
-        socket.on("checked-list", function (data) {
-            io.emit("emit-checked", data)
+        socket.on("check-list", function (data) {
+            io.emit("emit-check", data)
         })
 
-        socket.on("delete-list", function(data){
-            io.emit("emit-deleted", data)
+        socket.on("uncheck-list", function(data){
+            io.emit("emit-uncheck", data)
         })
     })
 }

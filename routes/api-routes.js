@@ -2,38 +2,54 @@ const db = require("../models");
 
 module.exports = function (app) {
     app.get("/api/get-todolist", function (req, res) {
-        db.Todo.findAll({}).then(function (data) {
-            res.json(data);
-        })
+        db.Todo.findAll({})
+            .then(function (data) {
+                res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
     })
 
     app.post("/api/add-todolist", function (req, res) {
-        db.Todo.create(req.body).then(function (data) {
-            res.json(data);
-        })
+        db.Todo.create(req.body)
+            .then(function (data) {
+                res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
+            })
     })
 
     app.put("/api/check-todolist/:id", function (req, res) {
         db.Todo.update({
-            complete: 1
+            complete: true
         }, {
                 where: {
                     id: req.params.id
                 }
-            }).then(function (data) {
+            })
+            .then(function (data) {
                 res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
             })
     })
 
     app.put("/api/uncheck-todolist/:id", function (req, res) {
         db.Todo.update({
-            complete: 0
+            complete: false
         }, {
                 where: {
                     id: req.params.id
                 }
-            }).then(function (data) {
+            })
+            .then(function (data) {
                 res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
             })
     })
 }
