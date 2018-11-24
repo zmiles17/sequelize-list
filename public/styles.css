@@ -44,7 +44,9 @@ main {
     background: white;
     opacity: 0.85;
     height: 100%;
-    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     box-shadow: -7px 0px 14px 0px rgba(0,0,0,0.75);
     font-size: 25px;
     width: 300px;
@@ -52,22 +54,26 @@ main {
 ul {
     grid-area: ul;
     float: right;
-    margin: 20px 0px 20px 20px;
+    width: inherit;
     overflow-wrap: break-word;
 }
 li {
     width: 100%;
     display: inline-block;
     padding-top: 10px;
-    border-bottom: 2px lightgray solid;
 }
-
+p {
+    border-bottom: 2px lightgray solid;
+    display: inline-block;
+    width: 90%;
+}
 i {
     display: inline-block;
     font-size: 15px;
     color: gray;
     padding-right: 10px;
     padding-top: 5px;
+    padding-left: 5px;
     border-bottom: initial;
 }
 

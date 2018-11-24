@@ -4,7 +4,7 @@ function render() {
     $.get("/api/get-todolist").then(res => {
         $("ul").empty();
         res.forEach(elem => {
-            $("ul").append(`<li data-id=${elem.id}><i class="far ${elem.complete ? "fa-dot-circle" : "fa-circle"}"></i>${elem.text}</li>`);
+            $("ul").append(`<li data-id=${elem.id}><i class="far ${elem.complete ? "fa-dot-circle" : "fa-circle"}"></i><p>${elem.text}</p></li>`);
         })
         check();
         deleteItem();
