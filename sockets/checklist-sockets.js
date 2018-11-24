@@ -8,8 +8,8 @@ module.exports = function (io) {
             io.emit("emit-check", data)
         })
 
-        socket.on("uncheck-list", function(data){
-            io.emit("emit-uncheck", data)
+        socket.on("delete-list", function(data){
+            io.emit("emit-delete", data)
         })
     })
 }

@@ -37,14 +37,12 @@ module.exports = function (app) {
             })
     })
 
-    app.put("/api/uncheck-todolist/:id", function (req, res) {
-        db.Todo.update({
-            complete: false
-        }, {
-                where: {
-                    id: req.params.id
-                }
-            })
+    app.delete("/api/delete-todolist/:id", function (req, res) {
+        db.Todo.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
             .then(function (data) {
                 res.json(data);
             })
