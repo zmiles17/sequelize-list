@@ -56,11 +56,12 @@ ul {
     float: right;
     width: inherit;
     overflow-wrap: break-word;
+    margin-top: 25px;
 }
 li {
     width: 100%;
     display: inline-block;
-    padding-top: 10px;
+    padding-top: 25px;
 }
 p {
     border-bottom: 2px lightgray solid;
@@ -77,10 +78,19 @@ i {
     border-bottom: initial;
 }
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 650px){
 header {
     display: initial;
     font-size: 50px;
+}
+h1 {
+    font-weight: bolder;
+    padding-left: 25px;
+}
+h2{
+    padding-top: 100px;
+    padding-left: 25px;
+    font-size: 70px;
 }
 main {
     grid-template-rows: 1fr 100px;
