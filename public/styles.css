@@ -51,10 +51,11 @@ main {
     font-size: 25px;
     width: 300px;
     overflow-y: scroll;
+    padding-left: 15px;
 }
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    width: 0px; 
+    background: transparent;  
 }
 ul {
     grid-area: ul;
